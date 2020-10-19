@@ -115,8 +115,9 @@ public class SpringbootEsApplicationTest {
                 .withId(book.getId().toString())
                 .withObject(book).build();
         elasticsearchTemplate.index(indexQuery);
-        
+
         //获取 数据文档
+        //https://docs.spring.io/spring-data/elasticsearch/docs/3.2.10.RELEASE/reference/html/#elasticsearch.operations.template
         SearchQuery searchQuery = new NativeSearchQueryBuilder()
                 .withQuery(matchAllQuery())
                 .withIndices("atguigu")
